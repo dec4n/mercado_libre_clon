@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>MercadoLibre IA</title>
+  <header>
+    <img src="logo.png" alt="Logo Mercado Libre" style="height: 120px; vertical-align: middle;">
+    </header>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffe600;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #3483fa;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0056b3;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #444;
+      border-bottom: 2px solid #ffe600;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    article {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fafafa;
+    }
+
+    article h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    article a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #3483fa;
+      font-weight: bold;
+    }
+
+    article a:hover {
+      text-decoration: underline;
+    }
+
+    .categorias ul {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .categorias ul li a {
+      display: block;
+      padding: 10px;
+      background-color: #fffde7;
+      border: 1px solid #ffe600;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 500;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .categorias ul li a:hover {
+      background-color: #fff59d;
+    }
+
+    .banner {
+      background: url('https://http2.mlstatic.com/D_NQ_894706-MLA74733127388_022024-OO.webp') center/cover no-repeat;
+      height: 200px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .promociones {
+      background-color: #fffde7;
+      border: 1px dashed #ffce00;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .promociones p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ff3e00;
+    }
+
+    .grilla-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .producto {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .producto img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .producto h4 {
+      margin: 10px 0 5px;
+    }
+
+    .precio {
+      font-size: 1.2em;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    .btn-comprar {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #3483fa;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .btn-comprar:hover {
+      background-color: #2968c8;
+    }
+
+    footer {
+      background-color: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    footer a {
+      color: #3483fa;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    
+    <form action="#" method="get">
+      <label for="busqueda" style="display: none;">Buscar productos:</label>
+      <input type="text" id="busqueda" name="q" placeholder="Buscar productos, marcas y más...">
+      <button type="submit">Buscar</button>
+    </form>
+    <nav>
+      <ul>
+        <li><a href="#">Categorías</a></li>
+        <li><a href="#">Ofertas</a></li>
+        <li><a href="#">Historial</a></li>
+        <li><a href="#">Supermercado</a></li>
+        <li><a href="#">Moda</a></li>
+        <li><a href="#">Vender</a></li>
+        <li><a href="#">Ayuda</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="banner"></div>
+
+    <section class="promociones">
+      <p>🔥 ¡GRANDES OFERTAS en tecnología, hogar y más! ¡Envíos gratis y hasta 50% de descuento!</p>
+    </section>
+
+    <section>
+      <h2>Productos destacados</h2>
+      <div class="grilla-productos">
+        <div class="producto">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_2X_933752-MCO51813200636_102022-F.webp" alt="Smartphone Genérico">
+          <h4>Smartphone Genérico</h4>
+          <p class="precio">$500.000</p>
+          <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+        <div class="producto">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_2X_741290-MCO73697881236_122023-F.webp" alt="Televisor 55 pulgadas">
+          <h4>Televisor 55"</h4>
+          <p class="precio">$2.500.000</p>
+          <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+        <div class="producto">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_2X_723109-MCO73447852121_122023-F.webp" alt="Laptop portátil">
+          <h4>Laptop Portátil 14"</h4>
+          <p class="precio">$1.900.000</p>
+          <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+        <div class="producto">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_2X_909302-MCO73567673519_122023-F.webp" alt="Air Fryer">
+          <h4>Freidora de Aire 4L</h4>
+          <p class="precio">$320.000</p>
+          <a href="#" class="btn-comprar">Comprar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categorias">
+      <h2>Categorías populares</h2>
+      <ul>
+        <li><a href="#">Tecnología</a></li>
+        <li><a href="#">Electrodomésticos</a></li>
+        <li><a href="#">Ropa y Accesorios</a></li>
+        <li><a href="#">Hogar y Muebles</a></li>
+        <li><a href="#">Juguetes</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MercadoLibre. Todos los derechos reservados.</p>
+    <p><a href="#">Términos y condiciones</a> | <a href="#">Política de privacidad</a></p>
+  </footer>
+
+</body>
+</html>
